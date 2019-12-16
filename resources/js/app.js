@@ -6,6 +6,12 @@
 
 require('./bootstrap');
 
+window.Vue = require('vue');
+
+import VModal from 'vue-js-modal';
+
+Vue.use(VModal);
+
 /**
  * Next, we will create a fresh React component instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -13,3 +19,9 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+
+Vue.component('new-project-modal', require('./components/NewProjectModal').default);
+
+const app = new Vue({
+    el: '#app'
+});
